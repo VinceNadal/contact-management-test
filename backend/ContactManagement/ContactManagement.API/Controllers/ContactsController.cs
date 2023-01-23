@@ -23,7 +23,7 @@ namespace ContactManagement.API.Controllers
         }
 
 
-        [HttpGet("{contactId}", Name= "GetContactById")]
+        [HttpGet("{contactId}", Name = "GetContactById")]
         public ActionResult<ContactDto> GetContactById(Guid contactId)
         {
             var contact = contactService.GetContactById(contactId);
@@ -42,10 +42,10 @@ namespace ContactManagement.API.Controllers
         }
 
         [HttpPut]
-        public ActionResult<ContactDto> UpdateContact(UpdateContactDto updateContactDto)
+        public ActionResult UpdateContact(UpdateContactDto updateContactDto)
         {
-            var contact = contactService.UpdateContactAsync(updateContactDto);
-            return Ok(contact);
+            contactService.UpdateContactAsync(updateContactDto);
+            return NoContent();
         }
 
         [HttpDelete("{contactId}")]
