@@ -17,7 +17,7 @@ export const Contacts = () => {
 
   return (
     <div>
-      <h1>Contact Management</h1>
+      <h1>Contact List</h1>
       <ul>
         {contacts.map((contact) => (
           <div key={contact.id}>
